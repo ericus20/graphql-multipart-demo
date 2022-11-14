@@ -8,6 +8,14 @@ type FileUploadResult {
     id: String!
 }
 
+input User {
+    name: String!
+}
+
+input FileUploadRequest {
+    user: User!
+}
+
 type Mutation {
-    fileUpload(file: Upload!): FileUploadResult!
+    fileUpload(file: Upload!, request: FileUploadRequest!): FileUploadResult!
 }

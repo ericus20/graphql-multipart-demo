@@ -62,7 +62,7 @@ public class GraphQlMultipartHandler {
         Map<String, MultipartFile> fileParams = readMultipartBody(serverRequest);
         Map<String, List<String>> fileMapInput = readJson(mapParam, new TypeReference<>() {});
 
-        fileMapInput.forEach((String fileKey, List<String> objectPaths) -> {
+        fileMapInput.forEach((fileKey, objectPaths) -> {
             MultipartFile file = fileParams.get(fileKey);
             if (file != null) {
                 objectPaths.forEach(objectPath -> MultipartVariableMapper.mapVariable(

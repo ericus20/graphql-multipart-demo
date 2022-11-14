@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.request.FileUploadRequest;
 import com.example.response.FileUploadResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.graphql.data.method.annotation.Argument;
@@ -14,8 +15,9 @@ import java.util.UUID;
 public class FileUploadController {
 
     @MutationMapping
-    public FileUploadResult fileUpload(@Argument MultipartFile file) {
+    public FileUploadResult fileUpload(@Argument MultipartFile file, @Argument FileUploadRequest request) {
         log.info("Upload file: name={}", file.getOriginalFilename());
+        log.info("request: {}", request);
 
         return new FileUploadResult(UUID.randomUUID());
     }
