@@ -9,5 +9,4 @@ public class GraphqlMultipartDemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GraphqlMultipartDemoApplication.class, args);
 	}
-
 }

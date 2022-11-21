@@ -16,6 +16,7 @@ configurations {
 
 repositories {
 	mavenCentral()
+	mavenLocal()
 }
 
 ext {
@@ -27,13 +28,16 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-graphql'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter'
+
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
+	implementation files("libs/lib-0.0.1-SNAPSHOT.jar")
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework:spring-webflux'
-	testImplementation 'org.springframework.graphql:spring-graphql-test'
+//	testImplementation 'org.springframework:spring-webflux'
+//	testImplementation 'org.springframework.graphql:spring-graphql-test'
 
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
